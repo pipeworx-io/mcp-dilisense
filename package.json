@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-dilisense",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "dilisense MCP — sanctions / PEP / criminal / adverse-media screening (AML/KYC)",
   "type": "module",
   "main": "src/index.ts",
@@ -24,5 +24,9 @@
   "devDependencies": {
     "typescript": "^5.9.3",
     "@cloudflare/workers-types": "^4.20260405.1"
+  },
+  "pipeworx": {
+    "sourceHash": "v1-67cf45d3193d6154c63555c0bd1c7fd3ebea4b0229f8903b4788da04ae2ac0db",
+    "sourceCommit": "76aa8f5d9b5dc2f665563030647c68e661478864"
   }
 }
