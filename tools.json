@@ -1,0 +1,81 @@
+[
+  {
+    "name": "dilisense_check_individual",
+    "description": "Screen a person against sanctions/PEP/criminal watchlists (AML/KYC). Returns matching watchlist records with source type, PEP level, citizenship and sanction details. Example: dilisense_check_individual({ names: \"Vladimir Putin\", _apiKey: \"your-key\" })",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "names": {
+          "type": "string",
+          "description": "Full name of the individual to screen, e.g. \"Vladimir Putin\""
+        },
+        "dob": {
+          "type": "string",
+          "description": "Optional date of birth to narrow matches, e.g. \"1952-10-07\""
+        },
+        "gender": {
+          "type": "string",
+          "description": "Optional gender filter: \"male\" or \"female\""
+        },
+        "fuzzy": {
+          "type": "boolean",
+          "description": "Enable fuzzy/approximate name matching (default true). Set false for exact matching only."
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "dilisense API key (free at dilisense.com — 100 calls/month)"
+        }
+      },
+      "required": [
+        "names",
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "dilisense_check_entity",
+    "description": "Screen a company against sanctions and watchlists (AML/KYC). Returns matching records with source type, jurisdiction and sanction details. Example: dilisense_check_entity({ names: \"Gazprom\", _apiKey: \"your-key\" })",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "names": {
+          "type": "string",
+          "description": "Company/organization name to screen, e.g. \"Gazprom\""
+        },
+        "fuzzy": {
+          "type": "boolean",
+          "description": "Enable fuzzy/approximate name matching (default true). Set false for exact matching only."
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "dilisense API key (free at dilisense.com — 100 calls/month)"
+        }
+      },
+      "required": [
+        "names",
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "dilisense_check_name",
+    "description": "Broad watchlist name check across all entity types — individuals, entities, vessels, aircraft. Returns all matching sanctions/PEP/criminal records plus the raw response. Example: dilisense_check_name({ names: \"Kalibr\", _apiKey: \"your-key\" })",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "names": {
+          "type": "string",
+          "description": "Name to screen — person, company, vessel or aircraft, e.g. \"Kalibr\""
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "dilisense API key (free at dilisense.com — 100 calls/month)"
+        }
+      },
+      "required": [
+        "names",
+        "_apiKey"
+      ]
+    }
+  }
+]
